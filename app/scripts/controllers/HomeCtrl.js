@@ -1,4 +1,6 @@
 (function() {
+  function HomeCtrl() {
+  }
   var app = angular.module("sampleApp", ["firebase"])
 
   app.controller("SampleCtrl", function($scope, $firebaseObject) {
@@ -35,10 +37,8 @@
     }
   ]);
 
-  function HomeCtrl() {
-  }
 
   angular
-    .module('blocChat')
+    .module('Blocitoff')
     .controller('HomeCtrl', [HomeCtrl]);
 })();
