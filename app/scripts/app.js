@@ -15,6 +15,6 @@
   }
 
   angular
-    .module('projectName', ['ui.router', 'firebase'])
+    .module('Blocitoff', ['ui.router', 'firebase'])
     .config(config);
 })();
