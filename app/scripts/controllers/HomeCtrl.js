@@ -29,7 +29,7 @@ app.controller("MyCtrl", ["$scope", "$firebaseArray",
     var list = $firebaseArray(ref);
 
     // add an item
-    list.$add({ foo: "bar" }).then(...)
+    list.$add({ foo: "bar" }).then(...);
 
     // remove an item
     list.$remove(2).then(...);
