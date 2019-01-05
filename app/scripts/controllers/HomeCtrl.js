@@ -29,10 +29,10 @@ app.controller("MyCtrl", ["$scope", "$firebaseArray",
     var list = $firebaseArray(ref);
 
     // add an item
-    list.$add({ foo: "bar" }).then(...);
+    list.$add({ foo: "bar" }).then(list.push);
 
     // remove an item
-    list.$remove(2).then(...);
+    list.$remove(i).then(list.splice(i, 1));
 
     // make the list available in the DOM
     $scope.list = list;
