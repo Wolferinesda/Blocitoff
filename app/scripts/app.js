@@ -28,5 +28,4 @@
   angular
     .module('Blocitoff', ['ui.router', 'firebase'])
     .config(config);
-    angular.bootstrap(document, ['Blocitoff']);
 })();

@@ -1,4 +1,6 @@
 (function() {
+  var app = angular.module("Blocitoff", ["firebase"]);
+
   function HomeCtrl ($scope, $firebaseArray) {
     console.log($scope);
     console.log($firebaseArray);
@@ -14,32 +16,6 @@
 
   }
 
-  var app = angular.module("sampleApp", ["firebase"]);
-
-  app.controller("SampleCtrl", function($scope, $firebaseObject) {
-  var ref = firebase.database().ref();
-  // download the data into a local object
-  $scope.data = $firebaseObject(ref);
-  // putting a console.log here won't work, see below
-});
-
-app.controller("MyCtrl", ["$scope", "$firebaseArray",
-  function($scope, $firebaseArray) {
-    var ref = firebase.database().ref();
-    var list = $firebaseArray(ref);
-
-    // add an item
-    list.$add({ foo: "bar" }).then(list.push);
-
-    // remove an item
-    list.$remove(i).then(list.splice(i, 1));
-
-    // make the list available in the DOM
-    $scope.list = list;
-  }
-]);
-
-  angular
-      .module('Blocitoff')
-      .controller('HomeCtrl', ['$scope', '$firebasearray', HomeCtrl]);
+  HomeCtrl.$inject = ["$scope", "$firebaseArray"];
+  app.controller("HomeCtrl", HomeCtrl);
 })();
